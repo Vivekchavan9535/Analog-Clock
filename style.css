@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: white;
+
+}
+body{
+    min-height: 100vh;
+    background-color: rgb(33, 33,34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    padding: 1vw;
+    border-radius: 50%;
+    background-color: rgb(44, 22, 22);
+    outline: 1vw solid grey;
+    outline-offset: 1vw;
+    box-shadow: 0 0 80px black;
+}
+
+.clock{
+    border-radius: 50%;
+    height: 40vw;
+    width:40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg*var(--j)));
+    inset:7vw;
+    text-align: center;
+}
+
+.clock span b{
+    transform: rotate(calc(-30deg*var(--j)));
+    display: inline-block;
+    font-size: 2vw;
+
+}
+
+.clock::before{
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+
+.hand i{
+    position: absolute;
+    background-color: var(--clr);
+    height:var(--ht);
+    width: var(--wt);
+    z-index: 0;
+}
+
+
+@media (max-width:600px) {
+    .clock span b{
+      
+        display: block;
+        font-size: 2vw;
+       
+    
+    }
+    
+    
+    .clock span{
+       
+        inset:200px
+    
+    }
+}
